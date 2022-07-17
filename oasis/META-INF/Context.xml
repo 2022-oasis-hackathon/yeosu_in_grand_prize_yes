@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/">
+    <WatchedResource>WEB-INF/web.xml</WatchedResource>
+    <WatchedResource>${catalina.base}/conf/web.xml</WatchedResource>
+	<Resource
+		auth = "Container"
+		driverClassName = "oracle.jdbc.OracleDriver"
+		url = "jdbc:oracle:thin:@kwonht.synology.me:31521:xe"
+		username = "blh8577"
+		password = "!as1642211"
+		name = "jdbc/orcl"
+		type = "javax.sql.DataSource"
+		maxActive = "100"
+		maxWait = "10000"
+		/>
+</Context>
