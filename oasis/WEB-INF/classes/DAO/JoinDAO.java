@@ -6,11 +6,14 @@ import java.util.ArrayList;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 
 public class JoinDAO {
+	
+	
 	
 	public void insertMember(HttpServletResponse response, HttpServletRequest request, ArrayList<String> list) {
 		response.setContentType("text/html; charset=UTF-8");
@@ -34,13 +37,20 @@ public class JoinDAO {
 			ps.setString(3, request.getParameter("phone"));
 			ps.setString(4, "/upload/productImg/1654833574480Qg1.png");
 			
+			
+			
 			for(String path : list) {
 				System.out.println(path);
 				ps.setString(4, path);
 			}
-			
+						
 			ps.executeQuery();
 
+	        Cookie cookie = new Cookie("member", request.getParameter("email"));
+	        
+	        response.addCookie(cookie);
+			
+	        
 		} catch (Exception e) {
 			System.out.print(e);
 		} finally {

@@ -3,7 +3,10 @@ package DTO;
 //예약
 public class Reservation {
 	private int idx;
-	//시작시간
+	//예약 이름
+	private String name;
+
+	//시작시간	
 	private String start_time;
 	//종료시간
 	private String end_time;
@@ -19,8 +22,12 @@ public class Reservation {
 	private int reward;
 	//출발지
 	private String departure;
+	//출발지 상세
+	private String details_departure;
 	//도착지
 	private String destination;
+	//도착지 상세
+	private String details_destination;
 	//이동수단
 	private String mobility;
 	//요청사항
@@ -35,6 +42,12 @@ public class Reservation {
 	}
 	public void setIdx(int idx) {
 		this.idx = idx;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
 	}
 	public String getStart_time() {
 		return start_time;
@@ -113,6 +126,18 @@ public class Reservation {
 	}
 	public void setScore(int score) {
 		this.score = score;
+	}
+	public String getDetails_departure() {
+		return details_departure;
+	}
+	public void setDetails_departure(String details_departure) {
+		this.details_departure = details_departure;
+	}
+	public String getDetails_destination() {
+		return details_destination;
+	}
+	public void setDetails_destination(String details_destination) {
+		this.details_destination = details_destination;
 	}
 
 }

@@ -32,6 +32,7 @@ public class Joincon extends HttpServlet {
         JoinDAO dao = new JoinDAO();
         
         dao.insertMember(response, request, (ArrayList<String>)request.getAttribute("img"));
+
         
         response.sendRedirect("./");
     }
