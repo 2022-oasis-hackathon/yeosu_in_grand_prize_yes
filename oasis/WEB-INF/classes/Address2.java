@@ -26,6 +26,8 @@ public class Address2 extends HttpServlet{
 		
 		reservation.setDetails_destination(request.getParameter("details_destination"));
 		reservation.setDestination(request.getParameter("destination"));
+		reservation.setDestination_lat(Double.parseDouble(request.getParameter("destination_lat")));
+		reservation.setDestination_lon(Double.parseDouble(request.getParameter("destination_lon")));
 		
 		session.setAttribute("reservation", reservation);
 		

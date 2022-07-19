@@ -17,7 +17,7 @@
 				<div>
 					<table>
 						<tr>
-							<td><img src="#" alt="사진 없음"></td>
+							<td><img src="<c:out value="${pickup.profile}" />" width="100px" height="100px" alt="사진 없음"></td>
 							<td><c:out value="${pickup.name}" /></td>
 						</tr>
 						<tr>
@@ -37,6 +37,11 @@
 						<tr>
 							<td><b>팁 가격: </b></td>
 							<td><c:out value="${pickup.reward}" /></td>
+						</tr>
+						<tr>
+							<!-- <td><a href="https://map.kakao.com/link/map/<c:out value="${pickup.destination_lat}" />,<c:out value="${pickup.destination_lon}" />">경로확인</a></td> -->
+							<td><a href="https://map.kakao.com/link/map/<c:out value="${pickup.departure}" />,<c:out value="${pickup.departure_lat}" />,<c:out value="${pickup.departure_lon}" />">도착지 확인</a></td>
+							<td><a href="./pickupdetailed?idx=<c:out value="${pickup.idx}" />&status=픽업중">배달하기</a> </td>
 						</tr>
 					</table>
 				</div>

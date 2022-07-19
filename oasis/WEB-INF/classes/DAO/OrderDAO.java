@@ -16,6 +16,9 @@ import DTO.Oasis_member;
 import DTO.Reservation;
 
 public class OrderDAO {
+	
+	
+	
 	public void insertOrder(HttpServletResponse response, HttpServletRequest request) {
 		response.setContentType("text/html; charset=UTF-8");
 		
@@ -45,12 +48,13 @@ public class OrderDAO {
 					+ "             mobility,\r\n"
 					+ "             requested,\r\n"
 					+ "             text,\r\n"
-					+ "             score)\r\n"
+					+ "             score, departure_lat, departure_lon, destination_lat, destination_lon"
+					+ ")\r\n"
 					+ "VALUES      (reservation_sq.NEXTVAL,\r\n"
 					+ "             ?,\r\n" //1. name
 					+ "             To_date(?, 'YYYY-MM-DD HH24:MI:SS'),\r\n" //2. strart_time
 					+ "             NULL,\r\n"
-					+ "             '픽업준비중',\r\n"
+					+ "             '픽업대기',\r\n"
 					+ "             NULL,\r\n"
 					+ "             ?,\r\n" //3. email
 					+ "             NULL,\r\n"
@@ -62,7 +66,7 @@ public class OrderDAO {
 					+ "             NULL,\r\n"
 					+ "             ?,\r\n" //9. requested
 					+ "             ?,\r\n" //10. text
-					+ "             NULL)";
+					+ "             NULL, ?, ?, ?, ?)";
 			
 			ps = con.prepareStatement(sql);
 			
@@ -81,6 +85,12 @@ public class OrderDAO {
 			ps.setString(8, reservation.getDetails_destination());
 			ps.setString(9, reservation.getRequested());
 			ps.setString(10, reservation.getText());
+			ps.setDouble(11, reservation.getDeparture_lat());
+			ps.setDouble(12, reservation.getDeparture_lon());
+			ps.setDouble(13, reservation.getDestination_lat());
+			ps.setDouble(14, reservation.getDestination_lon());
+			
+			
 			
 			ps.executeUpdate();
 			

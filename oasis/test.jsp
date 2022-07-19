@@ -7,9 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="./test" method="post">
-<p><input type="datetime-local" name="strart_time">
-<input type="submit" value="send">
-</form>
+
+<button onclick="document.location.href='tel:010-9979-7872'"> 
+
+<a href="tel:010-9979-7872">010-1234-5678로 전화걸기</a> </div>
+
 </body>
 </html>

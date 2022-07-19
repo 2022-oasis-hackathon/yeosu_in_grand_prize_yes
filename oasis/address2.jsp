@@ -31,6 +31,8 @@
 			</tr>
 		</table>
 
+		<input type="hidden" name="departure_lat">
+		<input type="hidden" name="departure_lon">
 
 <input type="text" name="destination" value="<c:out value="${param.destination}" />" disabled>
 <input type="text" name="details_destination" value="<c:out value="${param.details_destination}" />" disabled>
@@ -89,7 +91,8 @@
 	            let callback = function(result, status) {
 	                if (status === kakao.maps.services.Status.OK) {
 	                    $('#address2').val(result[0].road_address.address_name);
-	                    
+	                    $('input[name=departure_lat]').val(lat);
+	    	            $('input[name=departure_lon]').val(lon);
 	                    
 	                    
 	                }
@@ -165,6 +168,8 @@
 		                if (status === kakao.maps.services.Status.OK) {
 		                	// 추출한 도로명 주소를 해당 input의 value값으로 적용
 		                    $('#address2').val(result[0].road_address.address_name);
+		                    $('input[name=departure_lat]').val(lat);
+		    	            $('input[name=departure_lon]').val(lng);
 		                }
 		            }
 		            geocoder.coord2Address(coord.getLng(), coord.getLat(), callback);

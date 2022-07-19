@@ -22,9 +22,12 @@
 			<tr>
 				<td>상세 주소</td>
 				<td><input type="text" name="details_destination"></td>
+				
 				<td></td>
 			</tr>
 		</table>
+		<input type="hidden" name="destination_lat">
+		<input type="hidden" name="destination_lon">
 		<input type="submit" value="send">
 		</form>
 		
@@ -69,6 +72,8 @@
 	        
 	            
 	        getAddr(lat,lon);
+
+	            
 	        function getAddr(lat,lon){
 	            let geocoder = new kakao.maps.services.Geocoder();
 
@@ -76,7 +81,8 @@
 	            let callback = function(result, status) {
 	                if (status === kakao.maps.services.Status.OK) {
 	                    $('#address1').val(result[0].road_address.address_name);
-	                    
+	    	            $('input[name=destination_lat]').val(lat);
+	    	            $('input[name=destination_lon]').val(lon);
 	                    
 	                    
 	                }
@@ -152,6 +158,8 @@
 		                if (status === kakao.maps.services.Status.OK) {
 		                	// 추출한 도로명 주소를 해당 input의 value값으로 적용
 		                    $('#address1').val(result[0].road_address.address_name);
+		    	            $('input[name=destination_lat]').val(lat);
+		    	            $('input[name=destination_lon]').val(lng);
 		                }
 		            }
 		            geocoder.coord2Address(coord.getLng(), coord.getLat(), callback);

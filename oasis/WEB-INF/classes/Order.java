@@ -26,6 +26,8 @@ public class Order extends HttpServlet{
 		reservation.setDetails_departure(request.getParameter("details_departure"));
 		reservation.setDeparture(request.getParameter("departure"));
 		reservation.setName(request.getParameter("name"));
+		reservation.setDeparture_lat(Double.parseDouble(request.getParameter("departure_lat")));
+		reservation.setDeparture_lon(Double.parseDouble(request.getParameter("departure_lon")));
 		
 		session.setAttribute("reservation", reservation);
 		

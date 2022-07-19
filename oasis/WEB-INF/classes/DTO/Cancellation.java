@@ -6,6 +6,14 @@ public class Cancellation {
 	private String wrdate;
 	private int reservation_idx;
 	private String member_email;
+	private String reason;
+	
+	public String getReason() {
+		return reason;
+	}
+	public void setReason(String reason) {
+		this.reason = reason;
+	}
 	public int getIdx() {
 		return idx;
 	}

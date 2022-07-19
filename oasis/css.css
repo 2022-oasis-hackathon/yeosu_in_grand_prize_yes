@@ -1,0 +1,647 @@
+* { font-family: "맑은 고딕"; margin:0; padding:0; box-sizing:border-box;}
+body { width:100%; height:100%; margin:0; padding:0;border:0; letter-spacing:0; background:#fff;}
+li { list-style:none; text-decoration:none;}
+a {  text-decoration:none; list-style:none; color:#000;}
+img { border:none; display:block;}
+table { border-spacing:0; border-collapse:collapse;}
+
+/* 인트로 로고 이미지 */
+.intro_wrap  {
+	position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.intro_img { 
+	position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 40vw;
+    height: 40vw;
+
+}
+
+/* 회원가입 페이지 */
+.join_title { 
+	float: left; 
+	width: 100%; 
+	padding: 5%; 
+	font-size: 28px; 
+	font-weight: bold; 
+	color: #34cea1;
+}
+
+.join_profile_wrap { 
+	float: left; 
+	width: 100%;
+	margin-top: 20px;
+	margin-bottom: 50px;
+}
+
+.join_profile { 
+	position: relative;
+	width: 150px; 
+	height: 150px; 
+	margin: 0 auto;
+	border: 3px solid #d6d6d6; 
+	border-radius: 50%; 
+	background-repeat: no-repeat;
+  	background-size: 150px 150px !important;
+}
+.join_profile_img { 
+	position: absolute;
+	width: 97px;  
+	height: 97px; 
+	left: 50%; 
+	margin-left: -48.5px; 
+	top: 50%; 
+	margin-top: -48.5px;  
+}
+
+.join_pofile_camera_wrap { 
+	position: absolute; 
+	width: 36px; 
+	height: 36px; 
+	right: 0px; 
+	bottom: 0px; 
+	border-radius: 50%; 
+	background: #ccc;
+}
+.join_pofile_camera_wrap img { 
+	margin: 0 auto; 
+	margin-top: 6px; 
+	opacity: 0.5;
+}
+
+.join_pofile_camera {
+	display: none;
+}
+
+.join_input_title {
+	float: left;
+	width: 100%;
+	padding-left: 5%;
+	font-size: 14px;
+	color: #666;
+	margin-bottom: 10px;
+}
+
+.join_input_wrap{
+	text-align: center;
+	float: left;
+	width: 100%;
+	height: 50px;
+	margin-bottom: 30px;
+}
+
+.join_input {
+	width: 90%;
+	height: 50px;
+	border: none;
+	padding: 15px;
+	color: #555;
+	box-shadow: 0px 0px 5px rgba(121, 121, 121, 0.161);
+}
+
+.join_input::placeholder {
+	color: #ddd;
+}
+
+.join_email_wrap{
+	width: 90%;
+	height: 50px;
+	box-shadow: 0px 0px 5px rgba(121, 121, 121, 0.161);
+	margin: 0 auto;
+}
+
+.join_input_email{
+	width: 75%;
+	height: 50px;
+	border: none;
+	padding: 15px;
+	color: #555;
+	padding: 15px;
+}
+
+.join_input_email::placeholder {
+	color: #ddd;
+}
+
+.join_email_btn{
+	width: 15%;
+	margin-left: 2%;
+	margin-right: 5%;
+	height: 30px;
+	border: none;
+	background: #34cea1;
+	color: #fff;
+	border-radius: 5px;
+}
+
+.join_submit {
+	width: 90%;
+	height: 50px;
+	border: none;
+	padding: 15px;
+	color: #fff;
+	background: #34cea1;
+	border-radius: 5px;
+	font-size: 18px;
+	font-weight: bold;
+	box-shadow: 0px 0px 5px rgba(121, 121, 121, 0.161);
+}
+
+
+/* 로그인 페이지 */
+.login_title { 
+	float: left; 
+	width: 100%; 
+	padding: 5%; 
+	font-size: 28px; 
+	font-weight: bold; 
+	color: #34cea1;
+	margin-bottom: 40px;
+}
+
+.login_input_title {
+	float: left;
+	width: 100%;
+	padding-left: 20px;
+	font-size: 14px;
+	color: #666;
+	margin-bottom: 10px;
+}
+
+.login_input_wrap{
+	text-align: center;
+	float: left;
+	width: 100%;
+	height: 50px;
+	margin-bottom: 30px;
+}
+
+.login_input {
+	width: 90%;
+	height: 50px;
+	border: none;
+	padding: 15px;
+	color: #555;
+	box-shadow: 0px 0px 5px rgba(121, 121, 121, 0.161);
+}
+
+.login_input::placeholder {
+	color: #ddd;
+}
+
+.login_email_wrap{
+	width: 90%;
+	height: 50px;
+	box-shadow: 0px 0px 5px rgba(121, 121, 121, 0.161);
+	margin: 0 auto;
+}
+
+.login_input_email{
+	width: 75%;
+	height: 50px;
+	border: none;
+	padding: 15px;
+	color: #555;
+	padding: 15px;
+}
+
+.login_input_email::placeholder {
+	color: #ddd;
+}
+
+.login_email_btn{
+	width: 15%;
+	margin-left: 2%;
+	margin-right: 5%;
+	height: 30px;
+	border: none;
+	background: #34cea1;
+	color: #fff;
+	border-radius: 5px;
+}
+
+.login_email_time{
+	float: right;
+	width: 15%;
+	margin-left: 2%;
+	margin-right: 5%;
+	height: 50px;
+	border: none;
+	color: #34cea1;
+	line-height: 50px;
+}
+
+.login_submit {
+	width: 90%;
+	height: 50px;
+	border: none;
+	padding: 15px;
+	color: #fff;
+	background: #34cea1;
+	border-radius: 5px;
+	font-size: 18px;
+	font-weight: bold;
+	box-shadow: 0px 0px 5px rgba(121, 121, 121, 0.161);
+}
+
+.login_page_cancelPickup_btn { 
+	float: left; 
+	margin-top: 20px; 
+	width: 100%; 
+	color: #666; 
+	font-size: 12px; 
+	text-align: center; 
+}
+
+.check_number_div { display: none; width: 100%; padding: 5%; font-size: 12px; color: #d77; }
+
+
+/* 배송방법 영역 */
+.shippingMethod_title { 
+	float: left; 
+	width: 100%; 
+	padding: 5%; 
+	font-size: 28px; 
+	font-weight: bold; 
+	color: #34cea1;
+}
+
+.shippingMethod_text { width: 100%; padding: 5%; margin-bottom: 50px; margin-top: 30px; font-weight: bold; font-size: 18px; color: #333; }
+.shippingMethod_text > span { color: #34cea1; }
+
+.shippingMethod_profile_wrap { 
+	float: left; 
+	width: 100%;
+	margin-top: 20px;
+	margin-bottom: 50px;
+}
+
+.shippingMethod_profile { 
+	position: relative;
+	width: 150px; 
+	height: 150px; 
+	margin: 0 auto;
+	border: 3px solid #d6d6d6; 
+	border-radius: 50%; 
+}
+.shippingMethod_profile_img { 
+	position: absolute;
+	width: 97px;  
+	height: 97px; 
+	opacity: 0.5; 
+	left: 50%; 
+	margin-left: -48.5px; 
+	top: 50%; 
+	margin-top: -48.5px;  
+}
+
+.shippingMethod_pofile_camera_wrap { 
+	position: absolute; 
+	width: 36px; 
+	height: 36px; 
+	right: 0px; 
+	bottom: 0px; 
+	border-radius: 50%; 
+	background: #ccc;
+}
+.shippingMethod_pofile_camera_wrap img { 
+	margin: 0 auto; 
+	margin-top: 6px; 
+	opacity: 0.5;
+}
+
+.shippingMethod_pofile_camera {
+	display: none;
+}
+
+.shippingMethod_input_title {
+	float: left;
+	width: 100%;
+	padding-left: 20px;
+	font-size: 14px;
+	color: #666;
+	margin-bottom: 10px;
+}
+
+.shippingMethod_input_wrap{
+	text-align: center;
+	float: left;
+	width: 100%;
+	height: 50px;
+	margin-bottom: 80px;
+}
+
+.shippingMethod_input {
+	width: 90%;
+	height: 50px;
+	border: none;
+	padding: 15px;
+	color: #555;
+	box-shadow: 0px 0px 5px rgba(121, 121, 121, 0.161);
+}
+
+.shippingMethod_select_btn{
+	width: 90%;
+	height: 50px;
+	box-shadow: 0px 0px 5px rgba(121, 121, 121, 0.161);
+	margin: 0 auto;
+	font-size: 12px;
+	line-height: 50px;
+	text-align: left;
+	color: #555;
+	padding-left: 15px;
+
+}
+.shippingMethod_select_btn img { float: left; margin-right: 10px; margin-top: 15px; }
+
+.shippingMethod_submit {
+	width: 90%;
+	height: 50px;
+	border: none;
+	padding: 15px;
+	color: #fff;
+	background: #34cea1;
+	border-radius: 5px;
+	font-size: 18px;
+	font-weight: bold;
+	box-shadow: 0px 0px 5px rgba(121, 121, 121, 0.161);
+}
+.intro_wrap  {
+	position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.intro_img { 
+	position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 40vw;
+    height: 40vw;
+    z-index: 1;
+
+}
+.modal_back { display: none; position: absolute; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.2); }
+.shippingMethod_modal_box {
+	position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 200px;
+    height: 300px;
+    z-index: 2;
+    background: #fff;
+    border-radius: 10px;
+    padding: 0% 5%;
+}
+
+.shippingMethod_modal_box ul {float: left; width: 100%; height: 100%;}
+.shippingMethod_modal_box ul li { float: left; width: 100%; font-size: 18px; color: #333; font-weight: bold; height: 25%; line-height: 80px; border-bottom: 1px solid #ccc; }
+.shippingMethod_modal_box ul li:last-child { border-bottom: 0px; }
+
+
+/* 픽업취소 영역 */
+.cancelPickup_title { 
+	float: left; 
+	width: 100%; 
+	padding: 5%; 
+	font-size: 28px; 
+	font-weight: bold; 
+	color: #34cea1;
+}
+
+.cancelPickup_text { width: 100%; padding: 5%; margin-bottom: 50px; margin-top: 30px; font-weight: bold; font-size: 18px; color: #333; }
+.cancelPickup_text > span { color: #34cea1; }
+
+.cancelPickup_profile_wrap { 
+	float: left; 
+	width: 100%;
+	margin-top: 20px;
+	margin-bottom: 50px;
+}
+
+.cancelPickup_profile { 
+	position: relative;
+	width: 150px; 
+	height: 150px; 
+	margin: 0 auto;
+	border: 3px solid #d6d6d6; 
+	border-radius: 50%; 
+}
+.cancelPickup_profile_img { 
+	position: absolute;
+	width: 97px;  
+	height: 97px; 
+	opacity: 0.5; 
+	left: 50%; 
+	margin-left: -48.5px; 
+	top: 50%; 
+	margin-top: -48.5px;  
+}
+
+.cancelPickup_pofile_camera_wrap { 
+	position: absolute; 
+	width: 36px; 
+	height: 36px; 
+	right: 0px; 
+	bottom: 0px; 
+	border-radius: 50%; 
+	background: #ccc;
+}
+.cancelPickup_pofile_camera_wrap img { 
+	margin: 0 auto; 
+	margin-top: 6px; 
+	opacity: 0.5;
+}
+
+.cancelPickup_pofile_camera {
+	display: none;
+}
+
+.cancelPickup_input_title {
+	float: left;
+	width: 100%;
+	padding-left: 20px;
+	font-size: 14px;
+	color: #666;
+	margin-bottom: 10px;
+}
+
+.cancelPickup_input_wrap{
+	text-align: center;
+	float: left;
+	width: 100%;
+	height: 50px;
+	margin-bottom: 50px;
+}
+
+.cancelPickup_input {
+	width: 90%;
+	height: 50px;
+	border: none;
+	padding: 15px;
+	color: #555;
+	box-shadow: 0px 0px 5px rgba(121, 121, 121, 0.161);
+}
+
+.cancelPickup_select_btn{
+	width: 90%;
+	height: 50px;
+	box-shadow: 0px 0px 5px rgba(121, 121, 121, 0.161);
+	margin: 0 auto;
+	font-size: 12px;
+	line-height: 50px;
+	text-align: left;
+	color: #555;
+	padding-left: 15px;
+
+}
+.cancelPickup_select_btn img { float: left; margin-right: 10px; margin-top: 15px; }
+
+.cancelPickup_submit {
+	width: 90%;
+	height: 50px;
+	border: none;
+	padding: 15px;
+	color: #fff;
+	background: #34cea1;
+	border-radius: 5px;
+	font-size: 18px;
+	font-weight: bold;
+	box-shadow: 0px 0px 5px rgba(121, 121, 121, 0.161);
+}
+.intro_wrap  {
+	position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.intro_img { 
+	position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 40vw;
+    height: 40vw;
+    z-index: 1;
+
+}
+.modal_back { display: none; position: absolute; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.2); }
+.cancelPickup_modal_box {
+	position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 200px;
+    height: 300px;
+    z-index: 2;
+    background: #fff;
+    border-radius: 10px;
+    padding: 0% 5%;
+}
+
+.cancelPickup_modal_box ul {float: left; width: 100%; height: 100%;}
+.cancelPickup_modal_box ul li { float: left; width: 100%; font-size: 18px; color: #333; font-weight: bold; height: 20%; line-height: 60px; border-bottom: 1px solid #ccc; }
+.cancelPickup_modal_box ul li:last-child { border-bottom: 0px; }
+
+.cancelPickup_textarea_wrap{
+	text-align: center;
+	float: left;
+	width: 100%;
+	height: 150px;
+	margin-bottom: 30px;
+}
+
+.cancelPickup_textarea {
+	width: 90%;
+	height: 150px;
+	border: none;
+	padding: 15px;
+	color: #555;
+	box-shadow: 0px 0px 5px rgba(121, 121, 121, 0.161);
+}
+
+.cancelPickup_textarea::placeholder {
+	color: #ddd;
+}
+
+/* 배달 평가하기 */
+.evaluation_wrap{
+ float: left;
+ position: relative;
+ width: 100%;
+}
+
+.evaluation_wrap div{
+	float: left;
+	position: absolute;
+	color: #fff;
+	width: 130px;
+	height: 130px;
+	text-align: center;
+
+}
+.evaluation_wrap div img{ float: left; width: 60px; margin-left: 35px; margin-top: 20px;  }
+.evaluation_wrap div span { float: left; width: 100%; font-weight: bold; margin-top: 15px; }
+.evaluation_wrap a { color: #fff; }
+.evaluation_wrap div:first-child{ background: #ecaaaa; left: 5%; }
+.evaluation_wrap div:last-child{ background: #34cea1;  right: 5%;}
+
+/* 픽업 상태 변경 */
+.pickup_wrap { 
+	float: left; 
+	width: 100%;
+	height: 500px;
+	margin-top: 20px;
+	margin-bottom: 50px;
+	background: #e8e8e8;
+	background-repeat: no-repeat !important;
+  	background-size: 100% 500px !important;
+}
+
+.pickup_profile { 
+	position: relative;
+	width: 150px; 
+	height: 150px; 
+	margin: 0 auto;
+	border: 3px solid #939393; 
+	border-radius: 50%; 
+	background-repeat: no-repeat;
+  	background-size: 150px 150px !important;
+  	margin-top: 100px;
+}
+.pickup_profile_img { 
+	position: absolute;
+	width: 97px;  
+	height: 97px; 
+	left: 50%; 
+	margin-left: -48.5px; 
+	top: 50%; 
+	margin-top: -48.5px;  
+}
+.pickup_pofile_camera {
+	display: none;
+}
+
+.pickup_text { margin-top: 100px; width: 100%; text-align: center; font-size: 16px; color: #939393; }
+.pickup_text span { font-size: 12px; }
+
+
+
+

@@ -36,7 +36,45 @@ public class Reservation {
 	private String text;
 	//평가
 	private int score;
+	//member profile
+	private String profile;
 	
+	private double departure_lat;
+	private double departure_lon;
+	private double destination_lat;
+	private double destination_lon;
+	
+	
+	public double getDeparture_lat() {
+		return departure_lat;
+	}
+	public void setDeparture_lat(double departure_lat) {
+		this.departure_lat = departure_lat;
+	}
+	public double getDeparture_lon() {
+		return departure_lon;
+	}
+	public void setDeparture_lon(double departure_lon) {
+		this.departure_lon = departure_lon;
+	}
+	public double getDestination_lat() {
+		return destination_lat;
+	}
+	public void setDestination_lat(double destination_lat) {
+		this.destination_lat = destination_lat;
+	}
+	public double getDestination_lon() {
+		return destination_lon;
+	}
+	public void setDestination_lon(double destination_lon) {
+		this.destination_lon = destination_lon;
+	}
+	public String getProfile() {
+		return profile;
+	}
+	public void setProfile(String profile) {
+		this.profile = profile;
+	}
 	public int getIdx() {
 		return idx;
 	}
