@@ -35,6 +35,6 @@ public class Transit extends HttpServlet {
         img.insertimg(response, request, (ArrayList<String>)request.getAttribute("img"));
         img.delivery(request, response);
         
-        response.sendRedirect("./pickdownlist");
+        response.sendRedirect("./pickdownlist?status=");
     }
 }

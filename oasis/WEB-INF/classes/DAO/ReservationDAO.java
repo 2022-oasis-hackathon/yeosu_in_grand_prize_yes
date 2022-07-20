@@ -190,19 +190,19 @@ public class ReservationDAO {
 			DataSource ds = (DataSource) init.lookup("java:comp/env/jdbc/orcl");
 			con = ds.getConnection();
 
-			String sql = "SELECT idx, strart_time, status, member_email, reward,"
-					+ " departure, details_departure, destination,"
-					+ " details_destination, requested, departure_lat, departure_lon, destination_lat, destination_lon FROM reservation FROM"
-					+ " reservation WHERE idx = ?";
+			String sql = "SELECT idx, strart_time, status, member_email, reward,\r\n"
+					+ "					 departure, details_departure, destination,\r\n"
+					+ "					 details_destination, requested, departure_lat, "
+					+ "departure_lon, destination_lat, destination_lon FROM reservation WHERE idx = ?";
 
 			ps = con.prepareStatement(sql);
 
 			ps.setInt(1, Integer.parseInt(request.getParameter("idx")));
 			
 			rs = ps.executeQuery();
+			
 			rs.next();
 
-			
 			Reservation reservation = new Reservation();
 			reservation.setIdx(rs.getInt(1));
 			reservation.setStart_time(rs.getString(2));

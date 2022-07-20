@@ -32,17 +32,58 @@ public class PickupDAO {
 			DataSource ds = (DataSource) init.lookup("java:comp/env/jdbc/orcl");
 			con = ds.getConnection();
 
-			String sql = "SELECT idx, DEPARTURE, DESTINATION, STRART_TIME, REWARD,"
-					+ " name, m.PROFILE, ESTIMATED_TIME, STATUS FROM reservation r "
-					+ "JOIN OASIS_MEMBER m "
-					+ "on m.EMAIL = r.MEMBER_EMAIL "
-					+ "WHERE r.PICKUP_MEMBER_EMAIL = ?";
+			String sql = "";
+			
+			
+			if(request.getParameter("status").equals("") || request.getParameter("status") == null) {
+				
+				System.out.println("null");
+				
+				sql = "SELECT idx, DEPARTURE, DESTINATION, STRART_TIME, REWARD,"
+						+ " name, m.PROFILE, ESTIMATED_TIME, STATUS FROM reservation r "
+						+ "JOIN OASIS_MEMBER m "
+						+ "on m.EMAIL = r.MEMBER_EMAIL "
+						+ "WHERE r.PICKUP_MEMBER_EMAIL = ?";
+				
+			}else if(request.getParameter("status").equals("픽업중")) {
+				
+				System.out.println("픽업중");
+				
+				sql = "SELECT idx, DEPARTURE, DESTINATION, STRART_TIME, REWARD,"
+						+ " name, m.PROFILE, ESTIMATED_TIME, STATUS FROM reservation r "
+						+ "JOIN OASIS_MEMBER m "
+						+ "on m.EMAIL = r.MEMBER_EMAIL "
+						+ "WHERE r.PICKUP_MEMBER_EMAIL = ? AND status = '픽업중'";
+				
+			}else if(request.getParameter("status").equals("배달중")) {
+				
+				System.out.println("배달중");
+				
+				sql = "SELECT idx, DEPARTURE, DESTINATION, STRART_TIME, REWARD,"
+						+ " name, m.PROFILE, ESTIMATED_TIME, STATUS FROM reservation r "
+						+ "JOIN OASIS_MEMBER m "
+						+ "on m.EMAIL = r.MEMBER_EMAIL "
+						+ "WHERE r.PICKUP_MEMBER_EMAIL = ? AND status = '배달중'";
+				
+			}else {
+				
+				System.out.println("else");
+				
+				sql = "SELECT idx, DEPARTURE, DESTINATION, STRART_TIME, REWARD,"
+						+ " name, m.PROFILE, ESTIMATED_TIME, STATUS FROM reservation r "
+						+ "JOIN OASIS_MEMBER m "
+						+ "on m.EMAIL = r.MEMBER_EMAIL "
+						+ "WHERE r.PICKUP_MEMBER_EMAIL = ? AND status = '배달완료'";
+				
+			}
+			
 			
 			ps = con.prepareStatement(sql);
 			
 			Oasis_member member = (Oasis_member)session.getAttribute("member");
 			ps.setString(1, member.getEmail());
 			
+			System.out.println(member.getEmail());
 			
 			rs = ps.executeQuery();
 
@@ -198,9 +239,29 @@ public class PickupDAO {
 			DataSource ds = (DataSource) init.lookup("java:comp/env/jdbc/orcl");
 			con = ds.getConnection();
 
-			String sql = "SELECT idx, DEPARTURE, DESTINATION, STRART_TIME, REWARD,"
-					+ " name, m.PROFILE, departure_lat, departure_lon, destination_lat, destination_lon FROM reservation r JOIN"
-					+ " OASIS_MEMBER m on m.EMAIL = r.MEMBER_EMAIL WHERE status = '픽업대기'";
+			String sql = "";
+			
+			if(request.getParameter("orderby").equals("") || request.getParameter("orderby") == null) {
+				System.out.println("null");
+				sql = "SELECT idx, DEPARTURE, DESTINATION, STRART_TIME, REWARD,"
+						+ " name, m.PROFILE, departure_lat, departure_lon, destination_lat, destination_lon FROM reservation r JOIN"
+						+ " OASIS_MEMBER m on m.EMAIL = r.MEMBER_EMAIL WHERE status = '픽업대기'";
+			}else if(request.getParameter("orderby").equals("time")) {
+				System.out.println("time");
+				sql = "SELECT idx, DEPARTURE, DESTINATION, STRART_TIME, REWARD,\r\n"
+						+ "					  name, m.PROFILE, departure_lat, departure_lon, destination_lat, destination_lon FROM reservation r JOIN\r\n"
+						+ "					  OASIS_MEMBER m on m.EMAIL = r.MEMBER_EMAIL WHERE status = '픽업대기' ORDER BY r.STRART_TIME";
+			}else if(request.getParameter("orderby").equals("timedesc")){
+				System.out.println("timedesc");
+				sql = "SELECT idx, DEPARTURE, DESTINATION, STRART_TIME, REWARD,\r\n"
+						+ "					  name, m.PROFILE, departure_lat, departure_lon, destination_lat, destination_lon FROM reservation r JOIN\r\n"
+						+ "					  OASIS_MEMBER m on m.EMAIL = r.MEMBER_EMAIL WHERE status = '픽업대기' ORDER BY r.STRART_TIME desc";
+			}else {
+				System.out.println("else");
+				sql = "SELECT idx, DEPARTURE, DESTINATION, STRART_TIME, REWARD,\r\n"
+						+ "					  name, m.PROFILE, departure_lat, departure_lon, destination_lat, destination_lon FROM reservation r JOIN\r\n"
+						+ "					  OASIS_MEMBER m on m.EMAIL = r.MEMBER_EMAIL WHERE status = '픽업대기' ORDER BY r.REWARD desc";
+			}
 			
 			ps = con.prepareStatement(sql);
 			

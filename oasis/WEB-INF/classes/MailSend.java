@@ -60,9 +60,11 @@ public class MailSend extends HttpServlet{
             InternetAddress to = new InternetAddress(email);
             msg.setRecipient(Message.RecipientType.TO, to);
             // 이메일 제목
-            msg.setSubject("메일 전송 테스트", "UTF-8");
+            msg.setSubject("[당장]이메일 인증번호 발송메일", "UTF-8");
             // 이메일 내용
-            msg.setText("인증번호 : " + num, "UTF-8");
+            msg.setText("\"" +email+ "\"에 대한 인증 요청되었습니다.<br> \n 아래 인증 코드를 입력해주세요.<br> 인증코드: \n" +
+            num + "\n\n<br><br>만약 사용자가 인증 요청하지 않은 요청이라면 \"posin2361@naver.com\"으로 문의 바랍니다. <br><br>\n\n \"당장\""
+            		+ " 어플리케이션팀", "UTF-8");
             // 이메일 헤더
             msg.setHeader("content-Type", "text/html");
             //메일보내기

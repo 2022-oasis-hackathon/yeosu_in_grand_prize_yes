@@ -643,5 +643,305 @@ table { border-spacing:0; border-collapse:collapse;}
 .pickup_text span { font-size: 12px; }
 
 
+/* 픽업 내역  */
+.pickup_list_header_wrap { float: left; width: 100%; height: 80px; background: #34cea1; }
+.pickup_list_header_wrap ul { float: left; width: 100%; height: 80px; }
+.pickup_list_header_wrap ul li { float: left; width: 33%; font-size: 12px; text-align: center; padding-top: 10px;}
+.pickup_list_header_wrap ul li img { height: 40px; margin:0 auto; }
+.pickup_list_header_wrap ul li div { float: left; width: 100%; margin-bottom: 5px; }
+.pickup_list_header_wrap ul li span { padding-top: 10px; }
+.pickup_list_header_wrap ul li span a { font-size: 10px; }
+
+.pickup_list_content_wrap { float: left; width: 100%; padding: 30px; padding-top: 0px; }
+.pickup_list_content_wrap article { float: left; width: 100%; border-bottom: 1px solid #ddd;}
+
+.pickup_list_title { float: left; width: 100%; height: 80px; margin-top: 30px;}
+.pickup_list_img_div { float: left; position: relative; width: 80px; height: 80px; border-radius: 3px; background: #34cea1; }
+.pickup_list_img_div img { width: 80px; height: 80px; }
+.pickup_list_title span { float: left; width: calc(100% - 80px); text-align: center; font-size: 20px; font-weight: bold; color: #666; line-height: 80px;}
+
+.pickup_list_data_wrap { float: left; width: 100%; margin-top: 30px;}
+.pickup_list_data_wrap ul { float: left; width: 100%; }
+.pickup_list_data_wrap ul li { float: left; margin-top: 8px; width: 100%; font-size: 14px; color: #555; font-weight: bold; }
+.pickup_list_data_wrap ul li span { color: #999; }
+.pickup_list_data_wrap ul li:last-child span { color: #34cea1; }
+
+.pickup_list_btn_wrap { float: left; width: 100%; height: 40px; margin-top: 40px; margin-bottom: 20px;}
+.pickup_list_btn_wrap div { width: 200px; height: 40px; margin: 0 auto; padding-left: 50px; }
+.pickup_list_btn_wrap div a { float: left; font-size: 14px; margin-left: 40px; background: #34cea1; border-radius: 10px; color: #fff; padding: 10px; font-weight: bold; }
+.pickup_list_btn_wrap div a:first-child { margin-left: 0px; }
+
+/*배량현 추가*/
+.pickup_list_btn_wrap1 { float: left; width: 100%; height: 40px; margin-top: 40px; margin-bottom: 20px;}
+.pickup_list_btn_wrap1 div {  height: 40px; margin: 0 auto; padding-left: 120px;}
+.pickup_list_btn_wrap1 div a { float: left; font-size: 14px; margin-left: 40px; background: #34cea1; border-radius: 10px; color: #fff; padding: 10px; font-weight: bold; }
+.pickup_list_btn_wrap1 div a:first-child { margin-left: 0px; }
 
 
+/*
+개발자
+*/
+
+* { font-family: "맑은 고딕"; margin:0; padding:0; box-sizing:border-box;}
+body { width:100%; height:100%; margin:0; padding:0;border:0; letter-spacing:0; background:#fff;}
+li { list-style:none; text-decoration:none;}
+a {  text-decoration:none; list-style:none; color:#000;}
+img { border:none; display:block;}
+table { border-spacing:0; border-collapse:collapse;}
+
+.main_header{
+	float: left; 
+	width: 100%; 
+	padding: 5%; 
+	font-family: STHupo; /*폰트 적용 안되어 있음*/
+	font-size: 28px; 
+	font-weight: normal;
+	line-height: 1.04; 
+	color: #34cea1;
+}
+
+.main_deliver_wrap{
+	float: left;
+	width: 100%;
+	height: 212px; /*height, margin px->%로 수정? */
+	margin-top: 0px;
+	margin-bottom: 40px;
+	background: #34cea1;
+	border-radius: 5px;
+	padding: 39px 0 4.8px 28px;
+	box-shadow: 0 0 10px 0 rgba(121, 121, 121, 0.16);
+}
+
+.main_deliver_top_letter{
+	width: 20%;
+	margin-right: 22px;
+	margin-bottom: 18px;
+	font-family: NotoSansCJKkr;
+	font-size: 26px;
+	font-weight: bold;
+	color: #fff;
+}
+
+.main_deliver_bottom_letter{
+  width: 168px;
+  height: 40px;
+  margin: 18px 31px 32.1px 0;
+  font-family: NotoSansCJKkr;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+  text-align: left;
+  color: #fff;
+}
+
+.main_deliver_img_wrap{
+	position: relative;
+	width: 21%;
+	margin-left: 220px;
+	margin-top: -125px;
+}
+
+.main_deliver_img{
+}
+
+.main_deliver_btn{
+	width: 45%;
+	height: 41px;
+	margin-bottom: 10%;
+	background-color: #1a795d;
+	padding: 7.9px 25px 10px 24px;
+	color: #fff;
+	font-size: 16px;
+	font-family: NotoSansCJKkr;
+	font-weight: bold;
+	border: none;
+}
+
+/* 배달요청 */
+.main_request_wrap{
+	float: left;
+	width: 100%;
+	height: 212px; /*height, margin px->%로 수정? */
+	margin-bottom: 40px;
+	background: #ecaaaa;
+	border-radius: 5px;
+	padding: 39px 0 4.8px 28px;
+	box-shadow: 0 0 10px 0 rgba(121, 121, 121, 0.16);
+}
+
+.main_request_top_letter{
+	width: 30%;
+	margin-right: 22px;
+	margin-bottom: 18px;
+	font-family: NotoSansCJKkr;
+	font-size: 26px;
+	font-weight: bold;
+	color: #fff;
+}
+
+.main_request_bottom_letter{
+  width: 200px;
+  height: 40px;
+  margin: 18px 31px 32.1px 0;
+  font-family: NotoSansCJKkr;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+  text-align: left;
+  color: #fff;
+}
+
+.main_request_img_wrap{
+	position: relative;
+	width: 21%;
+	margin-left: 220px;
+	margin-top: -100px;
+}
+
+.main_request_img{
+}
+
+.main_request_btn{
+	width: 45%;
+	height: 41px;
+	margin-top: 7%;
+	margin-bottom: 10%;
+	background-color: #c95454;
+	padding: 7.9px 25px 10px 24px;
+	color: #fff;
+	font-size: 16px;
+	font-family: NotoSansCJKkr;
+	font-weight: bold;
+	border: none;
+}
+
+/* 주문내역 */
+.main_request_history_wrap{
+	float: left;
+	width: 100%;
+	height: 212px; /*height, margin px->%로 수정? */
+	margin-top: 0px;
+	margin-bottom: 40px;
+	background: #fff;
+	border-radius: 5px;
+	padding: 39px 0 4.8px 28px;
+	box-shadow: 0 0 10px 0 rgba(121, 121, 121, 0.16);
+}
+
+.main_request_history_top_letter{
+	width: 30%;
+	margin-right: 22px;
+	margin-bottom: 18px;
+	font-family: NotoSansCJKkr;
+	font-size: 26px;
+	font-weight: bold;
+	color: #383838;
+}
+
+.main_request_history_bottom_letter{
+  width: 200px;
+  height: 40px;
+  margin: 18px 31px 32.1px 0;
+  font-family: NotoSansCJKkr;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+  text-align: left;
+  color: #383838;
+}
+
+.main_request_history_img_wrap{
+	position: relative;
+	width: 21%;
+	margin-left: 220px;
+	margin-top: -100px;
+}
+
+.main_request_history_img{
+}
+
+.main_request_history_btn{
+	width: 50%;
+	height: 41px;
+	margin-top: 7%;
+	margin-bottom: 10%;
+	background-color: #383838;
+	padding: 7.9px 25px 10px 24px;
+	color: #fff;
+	font-size: 16px;
+	font-family: NotoSansCJKkr;
+	font-weight: bold;
+	border: none;
+}
+
+
+/* 픽업내역 */
+.main_pickup_history_wrap{
+	float: left;
+	width: 100%;
+	height: 212px; /*height, margin px->%로 수정? */
+	margin-top: 0px;
+	margin-bottom: 60px;
+	background: #979797;
+	border-radius: 5px;
+	padding: 39px 0 4.8px 28px;
+	box-shadow: 0 0 10px 0 rgba(121, 121, 121, 0.16);
+}
+
+.main_pickup_history_top_letter{
+	width: 30%;
+	margin-right: 22px;
+	margin-bottom: 18px;
+	font-family: NotoSansCJKkr;
+	font-size: 26px;
+	font-weight: bold;
+	color: #fff;
+}
+
+.main_pickup_history_bottom_letter{
+  width: 200px;
+  height: 40px;
+  margin: 18px 31px 32.1px 0;
+  font-family: NotoSansCJKkr;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+  text-align: left;
+  color: #fff;
+}
+
+.main_pickup_history_img_wrap{
+	position: relative;
+	width: 21%;
+	margin-left: 220px;
+	margin-top: -100px;
+}
+
+.main_pickup_history_img{
+}
+
+.main_pickup_history_btn{
+	width: 50%;
+	height: 41px;
+	margin-top: 7%;
+	margin-bottom: 10%;
+	background-color: #565656;
+	padding: 7.9px 25px 10px 24px;
+	color: #fff;
+	font-size: 16px;
+	font-family: NotoSansCJKkr;
+	font-weight: bold;
+	border: none;
+}
