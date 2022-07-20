@@ -59,13 +59,13 @@
 					</div>
 					<div class="pickup_list_data_wrap">
 						<ul>
-							<li>출발지:<span><c:out value="${pickup.departure}" />
+							<li>출발지: <span><c:out value="${pickup.departure}" />
 									<c:out value="${pickup.details_departure}" /></span></li>
-							<li>도착지:<span><c:out value="${pickup.destination}" />
+							<li>도착지: <span><c:out value="${pickup.destination}" />
 									<c:out value="${pickup.details_destination}" /></span></li>
-							<li>출발 예정 시간:<span><c:out
+							<li>출발 예정 시간: <span><c:out
 										value="${pickup.start_time}" /></span></li>
-							<li>팁 가격:<span><c:out value="${pickup.reward}" /></span></li>
+							<li>팁 가격: <span><c:out value="${pickup.reward}" /></span></li>
 						</ul>
 					</div>
 					<div class="pickup_list_btn_wrap1">

@@ -35,7 +35,7 @@ public class JoinDAO {
 			ps.setString(1, request.getParameter("email"));
 			ps.setString(2, request.getParameter("nick"));
 			ps.setString(3, request.getParameter("phone"));
-			ps.setString(4, "/upload/productImg/1654833574480Qg1.png");
+			ps.setString(4, "/upload/oasis_profile/profileindex.png");
 			
 			
 			

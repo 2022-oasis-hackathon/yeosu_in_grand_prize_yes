@@ -193,7 +193,7 @@ public class ReservationDAO {
 			String sql = "SELECT idx, strart_time, status, member_email, reward,\r\n"
 					+ "					 departure, details_departure, destination,\r\n"
 					+ "					 details_destination, requested, departure_lat, "
-					+ "departure_lon, destination_lat, destination_lon FROM reservation WHERE idx = ?";
+					+ "departure_lon, destination_lat, destination_lon, text FROM reservation WHERE idx = ?";
 
 			ps = con.prepareStatement(sql);
 
@@ -218,6 +218,7 @@ public class ReservationDAO {
 			reservation.setDeparture_lon(rs.getDouble(12));
 			reservation.setDestination_lat(rs.getDouble(13));
 			reservation.setDestination_lon(rs.getDouble(14));
+			reservation.setText(rs.getString(15));
 			
 			request.setAttribute("reservation", reservation);
 			

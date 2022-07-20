@@ -21,6 +21,7 @@ public class PickupDetailed extends HttpServlet{
 		ReservationDAO dao = new ReservationDAO();
 		
 		dao.delivery(request, response);
+		dao.pickdownPhone(request, response);
 		dao.reservation(request, response);
 		
 		RequestDispatcher rd = request.getRequestDispatcher("./pickupdetailed.jsp");

@@ -9,13 +9,14 @@
   <title>메인 페이지</title>
  </head>
  <body>
-    <div class="main_header">PICK MONEY
+    <div class="main_header">
+    <img src="./img/main.png" width="50px" height="30px" alt="사진 없음">
     </div>
     
     <div class="main_deliver_wrap">
         <div class="main_deliver_top_letter">배달
         </div>
-         <div class="main_deliver_bottom_letter">산책하면서 돈도 버는 재테크,<br>픽머니에서 시작하세요!
+         <div class="main_deliver_bottom_letter">산책하면서 돈 벌기<br> 당장에서 시작하세요!
         </div>
         <div class="main_deliver_img_wrap">
             <img src="./img/package.png" class="main_deliver_img">
@@ -27,7 +28,7 @@
     <div class="main_request_wrap">
         <div class="main_request_top_letter">배달요청
         </div>
-         <div class="main_request_bottom_letter">이젠 밖에 나가지 않아도 돼요.<br>픽머니에서 모두 배달해드릴게요!
+         <div class="main_request_bottom_letter">이젠 밖에 나가지 않아도 돼요.<br>당장에서 모두 배달해드릴게요!
         </div>
         <div class="main_request_img_wrap">
             <img src="./img/loud-speaker.png" class="main_request_img">
@@ -43,7 +44,7 @@
         <div class="main_request_history_img_wrap">
             <img src="./img/bill.png" class="main_request_history_img">
         </div>
-        <button class="main_request_history_btn" onClick="location.href='./orderlist'">주문내역 확인하기</button>
+        <button class="main_request_history_btn" onClick="location.href='./orderlist?where='">주문내역 확인하기</button>
     </div>
 
     <div class="main_pickup_history_wrap">

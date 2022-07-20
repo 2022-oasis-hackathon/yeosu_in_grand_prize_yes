@@ -1,58 +1,83 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core"%>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
 <html>
 <head>
-<!-- jquery 사용 -->
-<script src="./jquery.js"></script> 
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="css.css">
+<title>주소입력</title>
+<script src="./jquery.js"></script>
+
+
+
+
+
 </head>
+
 <body>
-		
-		<form action="./order?destination=<c:out value="${param.destination}" />&details_destination=<c:out value="${param.details_destination}" />" method="post">
-		<table>
-			<tr>
-				<td>주소지 이름</td>
-				<td><input type="text" name="name" id="addressname"></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>출발지 주소</td>
-				<td><input type="text" name="departure" id="address2"></td>
-				<td><button type="button" id="searchBtn">검색</button></td>
-			</tr>
-			<tr>
-				<td>상세 주소</td>
-				<td><input type="text" name="details_departure"></td>
-				<td></td>
-			</tr>
-		</table>
 
-		<input type="hidden" name="departure_lat">
-		<input type="hidden" name="departure_lon">
+	<form
+		action="./order?destination=<c:out value="${param.destination}" />&details_destination=<c:out value="${param.details_destination}" />"
+		method="post">
+		<div class="cancelPickup_title">출발지</div>
+		<div class="cancelPickup_text">
+			<span>픽업할 주소지</span>를 <br> 입력해 주세요!
+		</div>
 
-<input type="text" name="destination" value="<c:out value="${param.destination}" />" disabled>
-<input type="text" name="details_destination" value="<c:out value="${param.details_destination}" />" disabled>
+		<!-- 픽업취소 INPUT -->
 
- 
+		<div class="join_input_title">주소지 이름</div>
+		<div class="join_input_wrap">
+			<input type="text" required class="join_input" id="addressname"
+				name="name" placeholder="사용할 닉네임을 입력해 주세요.">
+		</div>
 
-		<input type="submit" value="send">
-		
-		</form>
-		
-		<div id="map" style="width:100%;height:350px;"></div>
-   
-	<!-- kakao API -->
-	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=	2401d2f452bb0400c1c01728cb403312&libraries=services"></script>
-	<script>
+		<div class="login_input_title">주소지 검색</div>
+		<div class="login_input_wrap">
+			<div class="login_email_wrap">
+				<input type="text" required class="login_input_email"
+					name="departure" id="address2" placeholder="이메일을 입력해 주세요.">
+				<input type="button" class="login_email_btn" id="searchBtn" value="검색" onclick="">
+				<input type="hidden" name="departure_lat"> <input
+					type="hidden" name="departure_lon"> <input type="hidden"
+					name="destination" value="<c:out value="${param.destination}" />"
+					disabled> <input type="hidden" name="details_destination"
+					value="<c:out value="${param.details_destination}" />" disabled>
+			</div>
+		</div>
+
+
+
+		<div id="map" style="width: 100%; height: 350px; margin-top: 100px;"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<!-- kakao API -->
+		<script type="text/javascript"
+			src="//dapi.kakao.com/v2/maps/sdk.js?appkey=	2401d2f452bb0400c1c01728cb403312&libraries=services"></script>
+		<script>
 	var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 	    mapOption = {
 	        center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
 	        level: 3 // 지도의 확대 레벨
 	    };  
+	
+	
+	
+	console.log(mapContainer)
 	
 	// 지도를 생성합니다    
 	var map = new kakao.maps.Map(mapContainer, mapOption); 
@@ -80,10 +105,12 @@
 	            lon = position.coords.longitude; // 경도
 	        
 	        var locPosition = new kakao.maps.LatLng(lat, lon), // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
-	            message = '<div style="padding:5px;">주문 위치</div>'; // 인포윈도우에 표시될 내용입니다
+	            message = '<div style="padding:5px;">현재위치</div>'; // 인포윈도우에 표시될 내용입니다
 	        
 	            
 	        getAddr(lat,lon);
+
+	            
 	        function getAddr(lat,lon){
 	            let geocoder = new kakao.maps.services.Geocoder();
 
@@ -176,7 +203,7 @@
 		        }
 		        
 
-		        displayMarker(coords, '<div style="padding:5px;">주문 위치</div>');
+		        displayMarker(coords, '<div style="padding:5px;">현재위치</div>');
 		        // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
 		        map.setCenter(coords);
 		    } 
@@ -184,5 +211,24 @@
 	});
 	  
 	</script>
+
+
+
+
+
+		<div class="join_input_title">
+			<br>상세주소
+		</div>
+		<div class="join_input_wrap">
+			<input type="text" required class="join_input" name="details_departure"
+				placeholder="상세주소를 입력해 주세요.(건물명,동/호수 등)">
+		</div>
+
+		<div class="cancelPickup_input_wrap">
+			<input type="hidden" name="details_departure"
+				class="cancelPickup_input_hidden"> <input type="submit"
+				class="cancelPickup_submit" value="현재 위치로 주소 설정하기">
+		</div>
+	</form>
 </body>
 </html>

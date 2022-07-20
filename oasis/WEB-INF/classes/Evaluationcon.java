@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.xml.ws.soap.AddressingFeature.Responses;
 
 import DAO.ReservationDAO;
 
@@ -21,8 +22,7 @@ public class Evaluationcon extends HttpServlet{
 		ReservationDAO dao = new ReservationDAO();
 		dao.evaluation(request, response);
 		
-		RequestDispatcher rd = request.getRequestDispatcher("./orderlist");
-		rd.forward(request, response);
+		response.sendRedirect("./");
 		
 	}
 }

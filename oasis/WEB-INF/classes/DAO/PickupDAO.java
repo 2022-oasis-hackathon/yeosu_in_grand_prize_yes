@@ -178,11 +178,80 @@ public class PickupDAO {
 			DataSource ds = (DataSource) init.lookup("java:comp/env/jdbc/orcl");
 			con = ds.getConnection();
 
-			String sql = "SELECT idx, DEPARTURE, DESTINATION, STRART_TIME, REWARD,"
-					+ " name, m.PROFILE, ESTIMATED_TIME, STATUS FROM reservation r "
-					+ "JOIN OASIS_MEMBER m "
-					+ "on m.EMAIL = r.MEMBER_EMAIL "
-					+ "WHERE r.MEMBER_EMAIL = ?";
+			
+			
+			
+			String sql = "";
+			
+			
+			if(request.getParameter("where").equals("") || request.getParameter("where") == null) {
+				System.out.println("null");
+				
+				sql = "SELECT idx, DEPARTURE, DESTINATION, STRART_TIME, REWARD,\r\n"
+						+ "					name, m.PROFILE, ESTIMATED_TIME, STATUS, \r\n"
+						+ "					departure_lat, departure_lon, destination_lat, destination_lon  \r\n"
+						+ "					FROM reservation r \r\n"
+						+ "					JOIN OASIS_MEMBER m \r\n"
+						+ "					on m.EMAIL = r.MEMBER_EMAIL \r\n"
+						+ "					WHERE r.MEMBER_EMAIL = ? ORDER BY STRART_TIME desc";
+				
+			}else if(request.getParameter("where").equals("픽업대기")) {
+				
+				System.out.println("픽업대기");
+				sql = "SELECT idx, DEPARTURE, DESTINATION, STRART_TIME, REWARD,\r\n"
+						+ "					name, m.PROFILE, ESTIMATED_TIME, STATUS, \r\n"
+						+ "					departure_lat, departure_lon, destination_lat, destination_lon  \r\n"
+						+ "					FROM reservation r \r\n"
+						+ "					JOIN OASIS_MEMBER m \r\n"
+						+ "					on m.EMAIL = r.MEMBER_EMAIL \r\n"
+						+ "					WHERE r.MEMBER_EMAIL = ? AND STATUS = '픽업대기' ORDER BY STRART_TIME desc";
+				
+			}else if(request.getParameter("where").equals("픽업중")){
+				
+				System.out.println("픽업중");
+				sql = "SELECT idx, DEPARTURE, DESTINATION, STRART_TIME, REWARD,\r\n"
+						+ "					name, m.PROFILE, ESTIMATED_TIME, STATUS, \r\n"
+						+ "					departure_lat, departure_lon, destination_lat, destination_lon  \r\n"
+						+ "					FROM reservation r \r\n"
+						+ "					JOIN OASIS_MEMBER m \r\n"
+						+ "					on m.EMAIL = r.MEMBER_EMAIL \r\n"
+						+ "					WHERE r.MEMBER_EMAIL = ? AND STATUS = '픽업중' ORDER BY STRART_TIME desc";
+				
+			}else if(request.getParameter("where").equals("배달중")){
+				
+				System.out.println("배달중");
+				sql = "SELECT idx, DEPARTURE, DESTINATION, STRART_TIME, REWARD,\r\n"
+						+ "					name, m.PROFILE, ESTIMATED_TIME, STATUS, \r\n"
+						+ "					departure_lat, departure_lon, destination_lat, destination_lon  \r\n"
+						+ "					FROM reservation r \r\n"
+						+ "					JOIN OASIS_MEMBER m \r\n"
+						+ "					on m.EMAIL = r.MEMBER_EMAIL \r\n"
+						+ "					WHERE r.MEMBER_EMAIL = ? AND STATUS = '배달중' ORDER BY STRART_TIME desc";
+				
+			}else {
+				
+				System.out.println("배달완료");
+				sql = "SELECT idx, DEPARTURE, DESTINATION, STRART_TIME, REWARD,\r\n"
+						+ "					name, m.PROFILE, ESTIMATED_TIME, STATUS, \r\n"
+						+ "					departure_lat, departure_lon, destination_lat, destination_lon  \r\n"
+						+ "					FROM reservation r \r\n"
+						+ "					JOIN OASIS_MEMBER m \r\n"
+						+ "					on m.EMAIL = r.MEMBER_EMAIL \r\n"
+						+ "					WHERE r.MEMBER_EMAIL = ? AND STATUS = '배달완료' ORDER BY STRART_TIME desc";
+			}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 			
 			ps = con.prepareStatement(sql);
 			
@@ -203,6 +272,10 @@ public class PickupDAO {
 				reservation.setProfile(rs.getString(7));
 				reservation.setEstimate_time(rs.getString(8));
 				reservation.setStatus(rs.getString(9));
+				reservation.setDeparture_lat(rs.getDouble(10));
+				reservation.setDeparture_lon(rs.getDouble(11));
+				reservation.setDestination_lat(rs.getDouble(12));
+				reservation.setDestination_lon(rs.getDouble(13));
 				System.out.println(reservation.getIdx());
 				list.add(reservation);
 			}

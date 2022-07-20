@@ -135,7 +135,7 @@
     </form>
 
     <div class="login_page_join_btn">
-        아직 회원이 아니신가요? <b><a href="./join">회원가입</a></b> 하러가기
+        &nbsp;아직 회원이 아니신가요? <b><a href="./join">회원가입</a></b> 하러가기
     </div>
  </body>
 </html>

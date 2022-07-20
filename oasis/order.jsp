@@ -4,28 +4,63 @@
 
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css.css">
+  <title>주문입력</title>
 
-<form action="./ordercon" method="post">
+  <script src="./jquery.js"></script>
+  <script>
+  
+  document.getElementById('currentDatetime').value= new Date().toISOString().slice(0, -1);
+  
+  </script>
+ </head>
 
-<p>출발지: <input type="text" name="departure" value="<c:out value="${param.departure}" />" disabled>
-<input type="hidden" name="details_departure" value="<c:out value="${param.details_departure}" />" disabled>
+ <body>
+    <form action="./ordercon" method="post">
+    <div class="join_title">
+        주문입력
+    </div>
 
-<p>도착지: <input type="text" name="departure" value="<c:out value="${param.destination}" />" disabled>
-<input type="hidden" name="details_departure" value="<c:out value="${param.details_destination}" />" disabled>
+    <!-- 회원가입 INPUT -->
+    <div class="join_input_title">출발지</div>
+    <div class="join_input_wrap">
+        <input type="text" required class="join_input"  name="departure" value="<c:out value="${param.departure}" />" disabled>
+        <input type="hidden" name="details_departure" value="<c:out value="${param.details_departure}" />" disabled>
+    </div>
+
+    <div class="join_input_title">도착지</div>
+    <div class="join_input_wrap">
+        <input type="text" required class="join_input" name="departure" value="<c:out value="${param.destination}" />" disabled>
+        <input type="hidden" name="details_departure" value="<c:out value="${param.details_destination}" />" disabled>
+    </div>
+
+    <div class="join_input_title">시작시간</div>
+    <div class="join_input_wrap">
+        <input type="datetime-local" required class="join_input" id='currentDatetime' name="strart_time">
+    </div>
 
 
-<p>시작시간: <input type="datetime-local" name="strart_time">
-<p>수수료: <input type="text" name="reward">
-<p>주문: <input type="text" name="text">
-<p>요청사항: <input type="text" name="requested">
-<p><input type="submit" value="send">
+    <div class="join_input_title">수수료</div>
+    <div class="join_input_wrap">
+        <input type="text" required class="join_input" name="reward" placeholder="수수료를 입력해 주세요.">
+    </div>
 
-</form>
+    <div class="join_input_title">주문</div>
+    <div class="join_input_wrap">
+        <input type="text" required class="join_input" name="text" placeholder="주문을 입력해 주세요.">
+    </div>
 
-</body>
+    <div class="join_input_title">요청사항</div>
+    <div class="join_input_wrap">
+        <input type="text" required class="join_input" name="requested" placeholder="요청사항을 입력해 주세요.">
+    </div>
+
+    <div class="join_input_wrap">
+        <input type="submit" class="join_submit" value="확인">
+    </div>
+    </form>
+ </body>
 </html>
